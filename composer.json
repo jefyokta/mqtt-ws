@@ -1,0 +1,17 @@
+{
+    "name": "jefyokta/mqttbroker",
+    "description": "A php mqtt over websocket broker",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jefyokta\\Mqttbroker\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jepi Oktamipa",
+            "email": "jefyokta50@gmail.com"
+        }
+    ],
+    "require": {}
+}
