@@ -7,7 +7,7 @@ use Jefyokta\Mqttbroker\Table\Provider;
 Mqtt::overWs()
     ->requestable(
         function ($req, $res) {
-            $res->end(file_get_contents(__DIR__ . "/browser.html"));
+            $res->end(file_get_contents(__DIR__ . "/index.html"));
         }
     )->booting(function () {
         Provider::create();

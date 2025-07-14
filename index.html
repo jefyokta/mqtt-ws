@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/5.13.2/mqtt.min.js"></script>
+</head>
+<body>
+    <script>
+        const client = mqtt.connect('ws://127.0.0.1:8000/mqtt');
+
+        client.on('connect', () => {
+            console.log('Connected to MQTT broker');
+            client.subscribe('test',(err)=>{
+                if (err) {
+                    console.log(err)
+                    return
+                }
+                console.log('subscribed to topic test')
+                
+
+            });
+        });
+
+        client.on('message', (topic, message) => {
+        console.log(`Received message on topic ${topic}: ${message}`);
+        });
+
+    </script>
+</body>
+</html>
