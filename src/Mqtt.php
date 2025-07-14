@@ -23,7 +23,7 @@ class Mqtt
      * @var Server
      */
     protected  $server;
-    protected $bootCallback;
+    protected $bootCallback = fn() => 'hello world';
 
     public function __construct()
     {
@@ -96,7 +96,8 @@ class Mqtt
         $this->server->on('Receive', fn(...$param) => $this->handleMqttReceive(...$param));
     }
 
-    public function booting($callback){
+    public function booting($callback)
+    {
         $this->bootCallback = $callback;
         return $this;
     }
